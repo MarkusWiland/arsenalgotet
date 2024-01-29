@@ -9,40 +9,67 @@ export default function Home() {
       </h2>
     </div>
   </div>
-  <div className="flex w-full">
-  <div className="bg-slat-600 flex-end ">
-    <div className="flex w-[60%] justify-between">
-      <h3>Nästa Match</h3>
-      <span>Img</span>
-    </div>
-    <div className="w-[60%] flex-grow">
-      <div className="flex w-full items-center">
-        <h3>Champions League</h3>
-        <p>Runda 5 - B 11/24/2024  20.00</p>
-      </div>
-      <div className="flex w-full flex-grow justify-between">
-        <div>
-          <span>icon</span>
-          <h1>Arsenal FC</h1>
-        </div>
-        <div className="bg-gray-200 border border-gray-400 flex items-center justify-center">
-          <h1>VS</h1>
-        </div>
-        <div>
-          <span>icon</span>
-          <h1>Arsenal FC</h1>
-        </div>
-      </div>
-    </div>
+<div className="full-width flex">
+<div className="bg-slate-200 w-full py-4">
+  <div className="w-9/12 flex  justify-between ">
+
+        <h1>nästa match</h1>
+        <span>Image</span>
   </div>
-  <div className="bg-slat-600 flex-grow">
-    <div className="flex justify-between">
-      <h3>Nästa Match</h3>
-      <span>Img</span>
-    </div>
-   
+      </div>
+      
+      <div className="bg-slate-200 w-full py-4">
+  <div className="w-9/12 flex  justify-between ">
+
+        <h1>nästa match</h1>
+        <span>Image</span>
   </div>
-</div>
+      </div>
+  </div>
+      <div className=" breakout flex">
+   <div className="flex items-center  justify-center gap-4">
+    <div>
+
+    <div className="flex flex-col justify-center items-center my-4">
+      <h1 className="text-sm font-bold">Premier league</h1>
+      <p>Round 5 - b 11/24/2024 20:45</p>
+    </div>
+    <div className="grid grid-cols-3 gap-4">
+      <div className="flex items-center">
+        <span className="mr-2">image</span>
+        <h1 className="text-xl lg:text-2xl">Arsenal FC</h1>
+      </div>
+      <div className="w-full flex items-center justify-center py-4 px-6 bg-gray-300 border border-gray-500">
+        <h1 className="text-3xl">VS</h1>
+      </div>
+      <div className="flex items-center">
+        <span className="mr-2">image</span>
+        <h1 className="text-xl lg:text-2xl">Arsenal FC</h1>
+      </div>
+    </div>
+    </div>
+    <div className="border-r border-gray-200" />
+    <div>
+<div className="border-r border-gray-500" />
+
+    <div className="grid grid-cols-3 gap-4">
+      <div className="flex items-center">
+        <span className="mr-2">image</span>
+        <h1 className="text-xl lg:text-2xl">Arsenal FC</h1>
+      </div>
+      <div className="w-full flex items-center justify-center  py-4 px-6 bg-gray-300 border border-gray-500">
+        <h1 className="text-3xl">VS</h1>
+      </div>
+      <div className="flex items-center">
+        <span className="mr-2">image</span>
+        <h1 className="text-xl lg:text-2xl">Arsenal FC</h1>
+      </div>
+    </div>
+    </div>
+ </div>
+ </div>
+
+
 
     </>
   );
