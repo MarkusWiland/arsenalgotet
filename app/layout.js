@@ -1,5 +1,6 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { Podcast } from "lucide-react";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -11,32 +12,28 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body className={`${inter.className}`}>
+      <main class="content-grid">
+      <header className="full h-[100px] flex items-center text-white bg-[#0E141A]">
+        <div className="breakout flex justify-between"> 
+        <span>IMAGE</span>
+        <div>
+          <button className="border border-gray-600 border-opacity-50 py-3 px-8">Logga In</button>
         
-        <main className="content-grid">
-        <header className="full-width">
-          <div className="bg-red-200 full-width">
-
-          <div className="flex justify-between items-center">
-            <span>Arsenal Göteborg</span>
-            <div className="flex items-center gap-4">
-              <button>Logga in</button>
-              <button>Registrera</button>
-            </div>
-          </div>
-          </div>
-          <nav className="mt-4">
+        </div>
+        </div>
+      <nav className="breakout flex justify-between items-center ">
             <ul className="flex gap-4">
-              <li>Start</li>
-              <li>Om oss</li>
-              <li>Spelare</li>
-              <li>Kontakt</li>
+              <li className="text-[#53616D] uppercase py-4 px-8">Start</li>
+              <li className="text-[#53616D] uppercase py-4 px-8">Om oss</li>
+              <li className="text-[#53616D] uppercase py-4 px-8">Spelare</li>
+              <li className="text-[#53616D] uppercase py-4 px-8">Kontakt</li>
             </ul>
-          </nav>
+            <button className="flex gap-2 text-yellow-300"><Podcast /> PODCAST</button>
+          </nav> 
         </header>
-        
         {children}
-        </main>
+       </main>
         </body>
     </html>
   );
