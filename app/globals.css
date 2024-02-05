@@ -4,7 +4,13 @@
 @layer base {
   .content-grid {
     display: grid;
+    
     grid-template-columns: [full-start left-start] 1fr [breakout-start] 1fr [content-start] 30vw [left-end right-start] 30vw [content-end] 1fr [breakout-end] 1fr [full-end right-end];
+  }
+  .bgImage {
+    background-image: url("/emirates.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
   }
 
   .content-grid .full {
@@ -26,8 +32,7 @@
   }
   .card--left {
     grid-column: left;
-    position: relative;
-    top: -3em;
+    margin-top: -3em;
   }
   .left {
     min-height: 48px;
@@ -38,7 +43,16 @@
     grid-column: right;
     align-self: start;
   }
+  .border-before {
+    @apply relative before:content-[''] before:absolute before:h-[calc(75%)] before:border-l-4 before:border-l-[red] before:border-solid before:-left-3 before:top-1;
+  }
+  .current {
+    @apply text-white;
+  }
+  .current::after {
+    @apply w-0 h-0 border-t-white content-["_"] absolute top-0 border-t-[15px] border-x-[15px] border-x-transparent border-solid -translate-x-2/4  left-2/4 ;
 
+  }
   .right {
     height: 48px;
     grid-column: right / full;
@@ -67,6 +81,11 @@
     height: 100%;
     background-color: rgba(0, 0, 0, 0.6);
     z-index: 0;
+  }
+  .img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
   }
 }
 :root {
