@@ -26,14 +26,17 @@ export default function HistoryInformation() {
     setActiveIndex(index === activeIndex ? activeIndex : index);
   };
   return (
-    <main className="full bgImage mt-12 border-t-4 border-red-600 ">
-      <section className="content mb-40">
+    <main className="full bgImage border-t-4 relative border-red-600 ">
+      <section className="content mb-40 z-30 absolute -top-20">
         <div className="">
           <img src="/emirates.jpg" className="img" />
         </div>
         <div className="flex  w-full pt-10 px-6 bg-white">
-          <div className="flex-1">
-            <Tabs defaultValue={club[0].value} className="bg-[#11181F]  text-[#B4CBE1] w-[90%] mx-auto">
+          <div className="flex-1"> 
+            <Tabs
+              defaultValue={club[0].value}
+              className="bg-[#11181F]  text-[#B4CBE1] w-[90%] mx-auto"
+            >
               <TabsList>
                 {club.map((cl, index) => (
                   <TabsTrigger
@@ -44,7 +47,7 @@ export default function HistoryInformation() {
                     {cl.menuTitle}
                   </TabsTrigger>
                 ))}
-              </TabsList>
+              </TabsList> 
 
               {club.map((cl, index) => (
                 <TabsContent
@@ -52,90 +55,82 @@ export default function HistoryInformation() {
                   value={cl.value}
                   className={`p-6 uppercase hover:cursor-pointer relative`}
                 >
-                    <div className="mt-4 pr-10">
-                <h1 className="uppercase font-bold text-3xl pl-6 mb-6 border-l-4 border-red-600">
-                  {cl.title}
-                </h1>
-
-                <p className="text-1xl text-gray-400">
-             
-                  {cl.description}
-                </p>
-              </div>
-              
+                  <div className="mt-4 pr-10">
+                    <h1 className="uppercase font-bold text-3xl pl-6 mb-6 border-l-4 border-red-600">
+                      {cl.title}
+                    </h1>
+                    <p className="text-1xl text-gray-400">{cl.description}</p>
+                  </div>
                 </TabsContent>
-                
               ))}
-                <div className="grid grid-cols-3 gap-4 mb-4">
-            <div>
-              <Image
-                src="/emirates.jpg"
-                height={100}
-                width={100}
-                objectFit="cover"
-              />
-            </div>
-            <div>
-              <Image
-                src="/emirates.jpg"
-                height={100}
-                width={100}
-                objectFit="cover"
-              />
-            </div>
-            <div>
-              <Image
-                src="/emirates.jpg"
-                height={100}
-                width={100}
-                objectFit="cover"
-              />
-            </div>
-            <div>
-              <Image
-                src="/emirates.jpg"
-                height={100}
-                width={100}
-                objectFit="cover"
-              />
-            </div>
-            <div>
-              <Image
-                src="/emirates.jpg"
-                height={100}
-                width={100}
-                objectFit="cover"
-              />
-            </div>
-            <div>
-              <Image
-                src="/emirates.jpg"
-                height={100}
-                width={100}
-                objectFit="cover"
-              />
-            </div>
-            <div>
-              <Image
-                src="/emirates.jpg"
-                height={100}
-                width={100}
-                objectFit="cover"
-              />
-            </div>
-            <div>
-              <Image
-                src="/emirates.jpg"
-                height={100}
-                width={100}
-                objectFit="cover"
-              />
-            </div>
-          </div>
+              <div className="grid grid-cols-3 gap-4 mb-4">
+                <div>
+                  <Image
+                    src="/emirates.jpg"
+                    height={100}
+                    width={100}
+                    objectFit="cover"
+                  />
+                </div>
+                <div>
+                  <Image
+                    src="/emirates.jpg"
+                    height={100}
+                    width={100}
+                    objectFit="cover"
+                  />
+                </div>
+                <div>
+                  <Image
+                    src="/emirates.jpg"
+                    height={100}
+                    width={100}
+                    objectFit="cover"
+                  />
+                </div>
+                <div>
+                  <Image
+                    src="/emirates.jpg"
+                    height={100}
+                    width={100}
+                    objectFit="cover"
+                  />
+                </div>
+                <div>
+                  <Image
+                    src="/emirates.jpg"
+                    height={100}
+                    width={100}
+                    objectFit="cover"
+                  />
+                </div>
+                <div>
+                  <Image
+                    src="/emirates.jpg"
+                    height={100}
+                    width={100}
+                    objectFit="cover"
+                  />
+                </div>
+                <div>
+                  <Image
+                    src="/emirates.jpg"
+                    height={100}
+                    width={100}
+                    objectFit="cover"
+                  />
+                </div>
+                <div>
+                  <Image
+                    src="/emirates.jpg"
+                    height={100}
+                    width={100}
+                    objectFit="cover"
+                  />
+                </div>
+              </div>
             </Tabs>
-            </div>
-
-           
+          </div>
         </div>
         <div className="bg-[#11181F]  text-[#B4CBE1] w-[90%] mx-auto">
           <ul className="flex px-4 relative">

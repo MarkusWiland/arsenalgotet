@@ -11,6 +11,21 @@
     background-image: url("/emirates.jpg");
     background-repeat: no-repeat;
     background-size: cover;
+    height: 100vh;
+    width:100%;
+    position:relative;
+  }
+  .bgImage::before {
+    content: "";
+    position: absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    height:100%;
+    width:100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    
   }
 
   .content-grid .full {
@@ -84,10 +99,13 @@
   }
   .img {
     width: 100%;
-    height: 500px;
+    height: 300px;
     object-fit: cover;
   }
 }
+
+
+
 :root {
   --foreground-rgb: 0, 0, 0;
   -background-start-rgb: 214, 219, 220;
