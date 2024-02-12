@@ -38,8 +38,8 @@ export default async function PlayerInformation({ params: { id } }) {
   return (
     <div className="full bg-black text-white min-h-screen">
       <section className="content flex pt-40 justify-center">
-        {truppen.map((p) => (
-          <div>
+        {truppen.map((p, index) => (
+          <div key={index}>
             <div className="flex">
               <img src="/martin.png" widTableHead="50%" />
               <div className="w-[50%] flex items-center flex-col justify-center">

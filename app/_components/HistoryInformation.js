@@ -33,36 +33,28 @@ export default function HistoryInformation() {
         </div>
         <div className="flex  w-full pt-10 px-6 bg-white">
           <div className="flex-1"> 
-            <Tabs
-              defaultValue={club[0].value}
+            <div
+          
               className="bg-[#11181F]  text-[#B4CBE1] w-[90%] mx-auto"
             >
-              <TabsList>
-                {club.map((cl, index) => (
-                  <TabsTrigger
-                    key={index}
-                    value={cl.value}
-                    className={`p-6 uppercase hover:cursor-pointer relative`}
-                  >
-                    {cl.menuTitle}
-                  </TabsTrigger>
-                ))}
-              </TabsList> 
+       
+            <ul>
 
               {club.map((cl, index) => (
-                <TabsContent
+                  <li
                   key={index}
                   value={cl.value}
                   className={`p-6 uppercase hover:cursor-pointer relative`}
-                >
+                  >
                   <div className="mt-4 pr-10">
                     <h1 className="uppercase font-bold text-3xl pl-6 mb-6 border-l-4 border-red-600">
                       {cl.title}
                     </h1>
                     <p className="text-1xl text-gray-400">{cl.description}</p>
                   </div>
-                </TabsContent>
+                </li>
               ))}
+              </ul>
               <div className="grid grid-cols-3 gap-4 mb-4">
                 <div>
                   <Image
@@ -129,7 +121,7 @@ export default function HistoryInformation() {
                   />
                 </div>
               </div>
-            </Tabs>
+         </div>
           </div>
         </div>
         <div className="bg-[#11181F]  text-[#B4CBE1] w-[90%] mx-auto">
