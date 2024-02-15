@@ -15,113 +15,118 @@ const club = [
     value: "2",
     menuTitle: "Kontakta",
     title: "Kontakta oss",
-    description:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
+    description: "Här kjan du kotnakta oss",
   },
 ];
 export default function HistoryInformation() {
   const [activeIndex, setActiveIndex] = useState(0);
-
+  const [mainImage, setMainImage] = useState("/emirates.jpg");
+  const changeImage = (newSrc) => {
+    setMainImage(newSrc);
+  };
   const handleItemClick = (index) => {
     setActiveIndex(index === activeIndex ? activeIndex : index);
   };
   return (
     <main className="full bgImage border-t-4 relative border-red-600 ">
-      <section className="content mb-40 z-30 absolute -top-20">
-        <div className="">
-          <img src="/emirates.jpg" className="img" />
+      <section className="content h-full w-full mb-40 z-30 ">
+        <div className="relative w-[100%] h-[350px]">
+          <Image
+            src={mainImage}
+            fill
+            sizes="(min-width: 768px) 100vw, (min-width: 1200px) 50vw, 33vw"
+            objectFit="cover"
+          />
         </div>
-        <div className="flex  w-full pt-10 px-6 bg-white">
-          <div className="flex-1"> 
-            <div
-          
-              className="bg-[#11181F]  text-[#B4CBE1] w-[90%] mx-auto"
-            >
-       
-            <ul>
-
-              {club.map((cl, index) => (
-                  <li
-                  key={index}
-                  value={cl.value}
+        <div className="flex  w-full min-h-[50vh] pt-10 px-6 bg-white">
+          <div className="flex w-full">
+            <div className="flex-1">
+              {activeIndex != null && club[activeIndex] && (
+                <div
+                  key={club[activeIndex].value}
+                  value={club[activeIndex].value}
                   className={`p-6 uppercase hover:cursor-pointer relative`}
-                  >
+                >
                   <div className="mt-4 pr-10">
                     <h1 className="uppercase font-bold text-3xl pl-6 mb-6 border-l-4 border-red-600">
-                      {cl.title}
+                      {club[activeIndex].title}
                     </h1>
-                    <p className="text-1xl text-gray-400">{cl.description}</p>
+                    <p className="text-1xl text-gray-400">
+                      {club[activeIndex].description}
+                    </p>
                   </div>
-                </li>
-              ))}
-              </ul>
-              <div className="grid grid-cols-3 gap-4 mb-4">
-                <div>
-                  <Image
-                    src="/emirates.jpg"
-                    height={100}
-                    width={100}
-                    objectFit="cover"
-                  />
                 </div>
-                <div>
-                  <Image
-                    src="/emirates.jpg"
-                    height={100}
-                    width={100}
-                    objectFit="cover"
-                  />
-                </div>
-                <div>
-                  <Image
-                    src="/emirates.jpg"
-                    height={100}
-                    width={100}
-                    objectFit="cover"
-                  />
-                </div>
-                <div>
-                  <Image
-                    src="/emirates.jpg"
-                    height={100}
-                    width={100}
-                    objectFit="cover"
-                  />
-                </div>
-                <div>
-                  <Image
-                    src="/emirates.jpg"
-                    height={100}
-                    width={100}
-                    objectFit="cover"
-                  />
-                </div>
-                <div>
-                  <Image
-                    src="/emirates.jpg"
-                    height={100}
-                    width={100}
-                    objectFit="cover"
-                  />
-                </div>
-                <div>
-                  <Image
-                    src="/emirates.jpg"
-                    height={100}
-                    width={100}
-                    objectFit="cover"
-                  />
-                </div>
-                <div>
-                  <Image
-                    src="/emirates.jpg"
-                    height={100}
-                    width={100}
-                    objectFit="cover"
-                  />
-                </div>
+              )}
+            </div>
+
+            <div className="grid grid-cols-3 gap-4 mb-4">
+              <div>
+                <Image
+                  src="/emirates.jpg"
+                  height={100}
+                  width={100}
+                  objectFit="cover"
+                  onClick={() => changeImage("/emirates.jpg")}
+                />
               </div>
-         </div>
+              <div>
+                <Image
+                  src="/martin.png"
+                  height={100}
+                  width={100}
+                  objectFit="cover"
+                  onClick={() => changeImage("/martin.png")}
+                />
+              </div>
+              <div>
+                <Image
+                  src="/emirates.jpg"
+                  height={100}
+                  width={100}
+                  objectFit="cover"
+                />
+              </div>
+              <div>
+                <Image
+                  src="/emirates.jpg"
+                  height={100}
+                  width={100}
+                  objectFit="cover"
+                />
+              </div>
+              <div>
+                <Image
+                  src="/emirates.jpg"
+                  height={100}
+                  width={100}
+                  objectFit="cover"
+                />
+              </div>
+              <div>
+                <Image
+                  src="/emirates.jpg"
+                  height={100}
+                  width={100}
+                  objectFit="cover"
+                />
+              </div>
+              <div>
+                <Image
+                  src="/emirates.jpg"
+                  height={100}
+                  width={100}
+                  objectFit="cover"
+                />
+              </div>
+              <div>
+                <Image
+                  src="/emirates.jpg"
+                  height={100}
+                  width={100}
+                  objectFit="cover"
+                />
+              </div>
+            </div>
           </div>
         </div>
         <div className="bg-[#11181F]  text-[#B4CBE1] w-[90%] mx-auto">

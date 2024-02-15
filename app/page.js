@@ -468,7 +468,7 @@ viewBox="0 0 192.756 192.756"
       <article className="card card--right">
         <div className="bg-[#11181F] text-[#B4CBE1] right">
           <div className="rightcon flex items-center justify-between">
-            <h1 className="ml-4">Nästa match</h1>
+            <h1 className="ml-4">Föregående match</h1>
             <span className="mr-4"></span>
           </div>
         </div>
