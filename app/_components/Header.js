@@ -64,18 +64,18 @@ export default function Header() {
         <NavigationMenuItem>
             <Link href="/" legacyBehavior passHref>
               <NavigationMenuLink
-                className={`${navigationMenuTriggerStyle()} text-white`}
+                className={`${navigationMenuTriggerStyle()}`}
                 >
                 Hem
               </NavigationMenuLink>
             </Link>
           </NavigationMenuItem>
           <NavigationMenuItem>
-            <NavigationMenuTrigger className="text-white">
+            <NavigationMenuTrigger className="">
               Om oss
             </NavigationMenuTrigger>
             <NavigationMenuContent>
-              <ul className="grid gap-3 p-4 bg-white text-blackmd:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
+              <ul className="grid gap-1 p-4 text-black md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
               <ListItem href="/docs" title="Matchträffar">
                  Här visas alla matchträffar
                 </ListItem>
@@ -95,11 +95,11 @@ export default function Header() {
             </NavigationMenuContent>
           </NavigationMenuItem>
           <NavigationMenuItem>
-            <NavigationMenuTrigger className="text-white">
+            <NavigationMenuTrigger className="">
               Components
             </NavigationMenuTrigger>
             <NavigationMenuContent>
-              <ul className="grid bg-white w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
+              <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
                 {components.map((component) => (
                     <ListItem
                     key={component.title}
@@ -115,7 +115,7 @@ export default function Header() {
           <NavigationMenuItem>
             <Link href="/docs" legacyBehavior passHref>
               <NavigationMenuLink
-                className={`${navigationMenuTriggerStyle()} text-white`}
+                className={`${navigationMenuTriggerStyle()}`}
                 >
                 Documentation
               </NavigationMenuLink>
@@ -133,7 +133,7 @@ export default function Header() {
 }
 const ListItem = ({ title, children, icon }) => {
   return (
-    <li>
+    <li className="cursor-pointer">
       <NavigationMenuLink asChild>
         <a
           className={cn(

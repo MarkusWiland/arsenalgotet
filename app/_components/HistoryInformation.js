@@ -38,16 +38,17 @@ export default function HistoryInformation() {
   };
   return (
     <main className="full bgImage border-t-4 relative border-red-600 ">
-      <section className="content h-full w-full mb-40 z-30 ">
+      <section className="breakout h-full w-full mb-40 z-30 ">
         <div className="relative w-[100%] h-[350px]">
           <Image
             src={mainImage}
             fill
+            priority
             sizes="(min-width: 768px) 100vw, (min-width: 1200px) 50vw, 33vw"
             objectFit="cover"
           />
         </div>
-        <div className="flex  w-full pt-10 min-h-[40vh] px-6 bg-white">
+        <div className="flex w-full  pt-10 min-h-[40vh] px-6 bg-white">
           <div className="flex w-full">
             <div className="flex-1">
               {activeIndex != null && club[activeIndex] && (
@@ -74,6 +75,7 @@ export default function HistoryInformation() {
                   <Image
                     src={img}
                     fill
+                    priority
                     className={`${mainImage === img ? "border-4" : ""} img`}
                     objectFit="cover"
                     onClick={() => changeImage(img)}

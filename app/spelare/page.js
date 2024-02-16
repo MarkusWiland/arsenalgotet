@@ -34,7 +34,7 @@ export default function Player() {
       <div className="grid grid-cols-5 gap-2 pt-6">
         <Link href={`/spelare/${1}`}>
           <div className="p-2 opacity-30 relative hover:scale-105 hover:shadow-xl cursor-pointer">
-            <h1 className="text-red-500 font-bold text-5xl absolute left-12 top-10">
+            <h1 className="text-red-500 font-bold text-5xl absolute left-4 top-10">
               03
             </h1>
             <img src="/martin.png" height="100%" width="100%" />
@@ -46,7 +46,7 @@ export default function Player() {
           </div>
         </Link>
         <div className="p-2  relative hover:scale-105 hover:shadow-xl cursor-pointer">
-          <h1 className="text-red-500  font-bold text-5xl absolute left-12 top-10">
+          <h1 className="text-red-500  font-bold text-5xl absolute left-4 top-10">
             03
           </h1>
           <img src="/martin.png" height="100%" width="100%" />
@@ -57,7 +57,7 @@ export default function Player() {
           </div>
         </div>
         <div className="p-2  relative hover:scale-105 hover:shadow-xl cursor-pointer">
-          <h1 className="text-red-500  font-bold text-5xl absolute left-12 top-10">
+          <h1 className="text-red-500  font-bold text-5xl absolute left-4 top-10">
             03
           </h1>
           <img src="/martin.png" height="100%" width="100%" />
@@ -68,7 +68,7 @@ export default function Player() {
           </div>
         </div>
         <div className="p-2  relative hover:scale-105 hover:shadow-xl cursor-pointer">
-          <h1 className="text-red-500 font-bold text-5xl absolute left-12 top-10">
+          <h1 className="text-red-500 font-bold text-5xl absolute left-4 top-10">
             03
           </h1>
           <img src="/martin.png" height="100%" width="100%" />
@@ -79,7 +79,7 @@ export default function Player() {
           </div>
         </div>
         <div className="p-2  opacity-30 relative hover:scale-105 hover:shadow-xl cursor-pointer">
-          <h1 className="text-red-500 font-bold text-5xl absolute left-12 top-10">
+          <h1 className="text-red-500 font-bold text-5xl absolute left-4 top-10">
             03
           </h1>
           <img src="/martin.png" height="100%" width="100%" />
