@@ -18,9 +18,18 @@ const club = [
     description: "Här kjan du kotnakta oss",
   },
 ];
+const images = [
+  "/emirates.jpg",
+  "/arsenal1.jpg",
+  "/arsenal2.jpg",
+  "/arsenal3.jpg",
+  "/arsenal4.jpg",
+  "/arsenal5.jpg",
+
+];
 export default function HistoryInformation() {
   const [activeIndex, setActiveIndex] = useState(0);
-  const [mainImage, setMainImage] = useState("/emirates.jpg");
+  const [mainImage, setMainImage] = useState(images[0]);
   const changeImage = (newSrc) => {
     setMainImage(newSrc);
   };
@@ -38,7 +47,7 @@ export default function HistoryInformation() {
             objectFit="cover"
           />
         </div>
-        <div className="flex  w-full min-h-[50vh] pt-10 px-6 bg-white">
+        <div className="flex  w-full pt-10 min-h-[40vh] px-6 bg-white">
           <div className="flex w-full">
             <div className="flex-1">
               {activeIndex != null && club[activeIndex] && (
@@ -59,73 +68,18 @@ export default function HistoryInformation() {
               )}
             </div>
 
-            <div className="grid grid-cols-3 gap-4 mb-4">
-              <div>
-                <Image
-                  src="/emirates.jpg"
-                  height={100}
-                  width={100}
-                  objectFit="cover"
-                  onClick={() => changeImage("/emirates.jpg")}
-                />
-              </div>
-              <div>
-                <Image
-                  src="/martin.png"
-                  height={100}
-                  width={100}
-                  objectFit="cover"
-                  onClick={() => changeImage("/martin.png")}
-                />
-              </div>
-              <div>
-                <Image
-                  src="/emirates.jpg"
-                  height={100}
-                  width={100}
-                  objectFit="cover"
-                />
-              </div>
-              <div>
-                <Image
-                  src="/emirates.jpg"
-                  height={100}
-                  width={100}
-                  objectFit="cover"
-                />
-              </div>
-              <div>
-                <Image
-                  src="/emirates.jpg"
-                  height={100}
-                  width={100}
-                  objectFit="cover"
-                />
-              </div>
-              <div>
-                <Image
-                  src="/emirates.jpg"
-                  height={100}
-                  width={100}
-                  objectFit="cover"
-                />
-              </div>
-              <div>
-                <Image
-                  src="/emirates.jpg"
-                  height={100}
-                  width={100}
-                  objectFit="cover"
-                />
-              </div>
-              <div>
-                <Image
-                  src="/emirates.jpg"
-                  height={100}
-                  width={100}
-                  objectFit="cover"
-                />
-              </div>
+            <div className="grid grid-cols-3 gap-2 pb-10  " style={{ height: '120px' }}>
+              {images.map((img, index) => (
+                <div key={index} className="relative h-[100px] w-[100px]">
+                  <Image
+                    src={img}
+                    fill
+                    className={`${mainImage === img ? "border-4" : ""} img`}
+                    objectFit="cover"
+                    onClick={() => changeImage(img)}
+                  />
+                </div>
+              ))}
             </div>
           </div>
         </div>
