@@ -14,6 +14,7 @@ import {
 
 import Link from "next/link";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 const components = [
   {
     title: "Alert Dialog",
@@ -35,48 +36,41 @@ const components = [
   },
 ];
 export default function Header() {
-   const [active, setActive] = useState(true)
-  // useEffect(() => {
-  //     const handleScroll = () => {
-  //       if (window.scrollY > 100) {
-  //         setActive(true);
-  //       } else {
-  //         setActive(false);
-  //       }
-  //     };
+   const [active, setActive] = useState(false)
+  useEffect(() => {
+      const handleScroll = () => {
+         if (window.scrollY > 100) {
+           setActive(true);
+        } else {
+         setActive(false);
+        }
+       };
 
-  //     window.addEventListener('scroll', handleScroll);
+      window.addEventListener('scroll', handleScroll);
 
-  //     // Rensa upp event listener vid unmount eller vid ändring i component.
-  //     return () => {
-  //       window.removeEventListener('scroll', handleScroll);
-  //     };
-  //   }, []);
+       // Rensa upp event listener vid unmount eller vid ändring i component.
+       return () => {
+         window.removeEventListener('scroll', handleScroll);
+       };
+     }, []);
   return (
-    <div className={`fixed ${active ? "backdrop-blur-lg" : ""} top-0 h-[80px] w-full z-40 flex items-center`}>
+    <div className={`fixed ${active ? "bg-white drop-shadow-lg" : ""} top-0 h-[80px] w-full z-40 flex items-center`}>
         <div className="w-[80vw] mx-auto flex justify-between items-center ">
-
-        <span>logo</span>
+<Link href="/">
+        <Image src="/arsenallogo.png" width={150} height={150} alt="Arsenal Goteborg" />
+</Link>
 
       <NavigationMenu className="  ">
         
         <NavigationMenuList>
-        <NavigationMenuItem>
-            <Link href="/" legacyBehavior passHref>
-              <NavigationMenuLink
-                className={`${navigationMenuTriggerStyle()}`}
-                >
-                Hem
-              </NavigationMenuLink>
-            </Link>
-          </NavigationMenuItem>
+    
           <NavigationMenuItem>
             <NavigationMenuTrigger className="">
               Om oss
             </NavigationMenuTrigger>
             <NavigationMenuContent>
-              <ul className="grid gap-1 p-4 text-black md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
-              <ListItem href="/docs" title="Matchträffar">
+              <ul className="grid gap-1 p-4 text-black md:w-[400px] lg:w-[500px] lg:grid-cols-[1fr_1fr]">
+              <ListItem href="/match" title="Matchträffar">
                  Här visas alla matchträffar
                 </ListItem>
               <ListItem href="/docs" title="Facebook Forum">
@@ -96,51 +90,75 @@ export default function Header() {
           </NavigationMenuItem>
           <NavigationMenuItem>
             <NavigationMenuTrigger className="">
-              Components
+              Arsenal FC
             </NavigationMenuTrigger>
             <NavigationMenuContent>
-              <ul className="grid w-[400px] gap-3 p-4 md:w-[500px] md:grid-cols-2 lg:w-[600px] ">
-                {components.map((component) => (
-                    <ListItem
-                    key={component.title}
-                    title={component.title}
-                    href={component.href}
-                    >
-                    {component.description}
-                  </ListItem>
-                ))}
-              </ul>
+              <ul className="grid gap-1 p-4 text-black md:w-[400px] lg:w-[500px] lg:grid-cols-[1fr_1fr]">
+              <ListItem href="/match" title="Truppen">
+
+Truppen                </ListItem>
+                </ul>
             </NavigationMenuContent>
-          </NavigationMenuItem>
+          </NavigationMenuItem> 
           <NavigationMenuItem>
-            <Link href="/docs" legacyBehavior passHref>
+            <Link href="/medlemskap" legacyBehavior passHref>
               <NavigationMenuLink
                 className={`${navigationMenuTriggerStyle()}`}
                 >
-                Documentation
+                Medlemskap
+              </NavigationMenuLink>
+            </Link>
+          </NavigationMenuItem>
+          <NavigationMenuItem>
+            <Link href="/kontakt" legacyBehavior passHref>
+              <NavigationMenuLink
+                className={`${navigationMenuTriggerStyle()}`}
+                >
+                Kontakt
+              </NavigationMenuLink>
+            </Link>
+          </NavigationMenuItem>
+          <NavigationMenuItem>
+            <Link href="/biljetter" legacyBehavior passHref>
+              <NavigationMenuLink
+                className={`${navigationMenuTriggerStyle()}`}
+                >
+                Biljetter
+              </NavigationMenuLink>
+            </Link>
+          </NavigationMenuItem>
+          <NavigationMenuItem>
+            <Link href="/biljetter" legacyBehavior passHref>
+              <NavigationMenuLink
+                className={`${navigationMenuTriggerStyle()} flex gap-1 text-yellow-300 bg-transparent border-none hover:text-yellow-300 hover:bg-transparent focus:text-yellow-300 focus:bg-transparent`}
+                >
+                 <Podcast /> PODCAST
               </NavigationMenuLink>
             </Link>
           </NavigationMenuItem>
         </NavigationMenuList>
       </NavigationMenu>
       
-      <button className="flex gap-2 text-yellow-300">
-        <Podcast /> PODCAST
+ 
+   
+      <button className="bg-slate-100 border-1 border-slate-400 py-1 px-2">
+        Logga in
       </button>
+     
+     
     </div>
                   </div>
   );
 }
 const ListItem = ({ title, children, icon }) => {
   return (
-    <li className="cursor-pointer">
+    <li className={cn(
+      "cursor-pointer block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
+    )}>
       <NavigationMenuLink asChild>
         <a
-          className={cn(
-            "block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-          )}
         >
-          <div className="text-sm font-bold leading-none flex gap-1 items-center"><span>{icon}</span> {title}</div>
+          <div className="text-sm font-bold leading-none flex gap-1 items-center">{icon ? <span>{icon}</span> : ""} {title}</div>
           <p className="line-clamp-3 italic text-sm leading-snug text-muted-foreground">
             {children}
           </p>

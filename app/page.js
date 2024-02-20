@@ -110,8 +110,8 @@ export default async function Home() {
               <span>
               <svg
 xmlns="http://www.w3.org/2000/svg"
-width="100"
-height="100"
+width="75"
+height="75"
 viewBox="0 0 192.756 192.756"
 >
 <path
@@ -291,18 +291,18 @@ viewBox="0 0 192.756 192.756"
 />
 </svg>
               </span>
-              <h1 className="text-2xl font-bold ">Manchester united</h1>
+              <h1 className="xl:text-2xl text-[1.2rem] font-bold ">Manchester united</h1>
             </div>
             <div className="flex bg-gray-200 border border-gray-400 flex-1 items-center justify-center py-4">
               <h1 className="text-4xl text-gray-500 ">VS</h1>
             </div>
             <div className="flex gap-2 flex-1 items-center">
-              <h1 className="text-2xl font-bold">Arsenal FC</h1>
+              <h1 className="xl:text-2xl text-[1.2rem]  font-bold">Arsenal FC</h1>
               <span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  width="100"
-                  height="100"
+                  width="75"
+                  height="75"
                   viewBox="0 0 192.756 192.756"
                 >
                   <path
@@ -478,8 +478,8 @@ viewBox="0 0 192.756 192.756"
               <span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  width="100"
-                  height="100"
+                  width="75"
+                  height="75"
                   viewBox="0 0 192.756 192.756"
                 >
                   <path
@@ -660,27 +660,28 @@ viewBox="0 0 192.756 192.756"
                 </svg>
               </span>
               <div className="flex flex-col text-center gap-1">
-                <h1 className="text-2xl font-bold">Arsenal</h1>
-                <p className="text-sm text-gray-400">
+                <h1 className="xl:text-2xl text-[1.2rem]  font-bold">Arsenal</h1>
+                <p className="xl:text-sm text-[.75rem] text-gray-400">
                   Martinelli (20) Saka (57, 69)
                 </p>
               </div>
             </div>
             <div className="flex bg-gray-200 border border-gray-400 flex-1 items-center justify-center py-4">
-              <h1 className="text-4xl text-gray-500 ">
+              <h1 className="xl:text-4xl text-2xl text-gray-500 ">
                 <span className="font-bold">3</span> - 1
               </h1>
             </div>
             <div className="flex flex-1 items-center gap-4">
               <div className="flex flex-col text-center gap-1">
-                <h1 className="text-2xl font-bold ">Manchester United</h1>
-                <p className="text-sm text-gray-400">Rashford (28)</p>
+                <h1 className="xl:text-2xl text-[1.2rem]  font-bold ">Manchester United</h1>
+                <p className="xl:text-sm text-[.75rem] text-gray-400">
+Rashford (28)</p>
               </div>
               <span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  width="100"
-                  height="100"
+                  width="75"
+                  height="75"
                   viewBox="0 0 192.756 192.756"
                 >
                   <path
@@ -863,7 +864,7 @@ viewBox="0 0 192.756 192.756"
           </div>
         </div>
       </article>
-      <section className="pb-40 full border-t border-red-700  bg-slate-100">
+      <section className="xl:pb-40 pb-20 full border-t border-red-700  ">
         <div className="content pt-20">
 
         <Tabs defaultValue="table" className="min-h-[70vh]">

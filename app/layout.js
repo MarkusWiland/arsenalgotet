@@ -2,6 +2,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { Podcast } from "lucide-react";
 import Header from "./_components/Header";
+import Footer from "./_components/Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,6 +18,7 @@ export default function RootLayout({ children }) {
         <main class="content-grid relative">
     <Header />
           {children}
+          <Footer />
         </main>
       </body>
     </html>
