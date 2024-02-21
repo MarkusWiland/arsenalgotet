@@ -4,7 +4,7 @@ import React from "react";
 export default function Player() {
   return (
     <section className="breakout text-right relative ">
-      <div className="w-[300px] absolute flex items-center justify-center -top-20 left-[10%] bg-white">
+      <div className="w-[300px] absolute flex items-center justify-center -top-20 left-0 xl:left-[10%] bg-white">
         <h1 className="uppercase font-bold text-2xl p-6">Truppen</h1>
       </div>
       <div className="flex justify-end items-center my-4">
